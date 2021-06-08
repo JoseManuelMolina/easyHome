@@ -153,25 +153,31 @@
                                 @if(isset($request))
                                     @if($request->minprecio != null)
                                         placeholder="{{$request->minprecio}}"
+                                        value="{{$request->minprecio}}"
                                     @else
                                         placeholder="00,00" 
+                                        value=""
                                     @endif
                                 @else
                                     placeholder="00,00" 
+                                    value=""
                                 @endif
-                                value="">
+                                >
                             <label for="maxprecio">Precio Máximo</label>
                             <input type="number" min="0.00" max="999999999.99" step="0.01" class="form-control" id="maxprecio" name="maxprecio" 
                                 @if(isset($request))
                                     @if($request->maxprecio != null)
                                         placeholder="{{$request->maxprecio}}"
+                                        value="{{$request->maxprecio}}"
                                     @else
                                         placeholder="00,00" 
+                                        value=""
                                     @endif
                                 @else
                                     placeholder="00,00" 
+                                    value=""
                                 @endif
-                                value="">
+                                >
                             
                             <h5 class="mt25">
                                 <span class="heading-divider mt10"></span>
@@ -182,25 +188,31 @@
                                 @if(isset($request))
                                     @if($request->minnhabitaciones != null)
                                         placeholder="{{$request->minnhabitaciones}}"
+                                        value="{{$request->minnhabitaciones}}"
                                     @else
                                         placeholder="1" 
+                                        value=""
                                     @endif
                                 @else
                                     placeholder="1"
+                                    value=""
                                 @endif
-                                value="">
+                                >
                             <label for="maxnhabitaciones">Número de habitaciones máximo</label>
                             <input type="number" min="1" max="30" class="form-control" id="maxnhabitaciones" name="maxnhabitaciones" 
                                 @if(isset($request))
                                     @if($request->maxnhabitaciones != null)
                                         placeholder="{{$request->maxnhabitaciones}}"
+                                        value="{{$request->maxnhabitaciones}}"
                                     @else
                                         placeholder="1" 
+                                        value=""
                                     @endif
                                 @else
                                     placeholder="1"
+                                    value=""
                                 @endif
-                                value="">
+                                >
                             
                             <h5 class="mt25">
                                 <span class="heading-divider mt10"></span>
@@ -211,25 +223,31 @@
                                 @if(isset($request))
                                     @if($request->mintamano != null)
                                         placeholder="{{$request->mintamano}}"
+                                        value="{{$request->mintamano}}"
                                     @else
                                         placeholder="20" 
+                                        value=""
                                     @endif
                                 @else
                                     placeholder="20" 
+                                    value=""
                                 @endif 
-                                value="">
+                                >
                             <label for="maxtamano">Tamaño máximo (metros cuadrados)</label>
                             <input type="number" min="20" max="1500" class="form-control" id="maxtamano" name="maxtamano" 
                                 @if(isset($request))
                                     @if($request->maxtamano != null)
                                         placeholder="{{$request->maxtamano}}"
+                                        value="{{$request->maxtamano}}"
                                     @else
-                                        placeholder="20" 
+                                        placeholder="20"
+                                        value=""
                                     @endif
                                 @else
-                                    placeholder="20" 
+                                    placeholder="20"
+                                    value=""
                                 @endif 
-                                value="">
+                                >
                             
                             <h5 class="mt25">
                                 <span class="heading-divider mt10"></span>

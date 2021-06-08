@@ -154,7 +154,10 @@ class InmuebleController extends Controller
         $provincias['provincias'] = Provincia::get(["id", "provincia"]);
         $tipos = ['vivienda' =>'Vivienda', 'habitacion' => 'Habitacion', 'local' => 'Local', 'oficina' => 'Oficina'];
         
-        return view('inmueble.all', $provincias)->with(['inmuebles' => $inmuebles, 'request' => $request,'parametros' => ['orderby' => $orderby], 'tipos' => $tipos,
+        return view('inmueble.all', $provincias)->with(['inmuebles' => $inmuebles, 'request' => $request,
+                        'parametros' => ['orderby' => $orderby, 'minprecio' => $minprecio, 'maxprecio' => $maxprecio, 'minnhabitaciones' => $minnhabitaciones, 'maxnhabitaciones' => $maxnhabitaciones,
+                            'mintamano' => $mintamano, 'maxtamano' => $maxtamano, 'idprovincia' => $idprovincia, 'tipo' => $tipo], 
+                        'tipos' => $tipos,
                         'criterios' =>['minprecio' => $minprecio, 'maxprecio' => $maxprecio, 'minnhabitaciones' => $minnhabitaciones, 'maxnhabitaciones' => $maxnhabitaciones,
                         'mintamano' => $mintamano, 'maxtamano' => $maxtamano, 'idprovincia' => $idprovincia, 'tipo' => $tipo, 'order' =>$order, 'nrp' => $nrp]]);
     }
@@ -326,6 +329,9 @@ class InmuebleController extends Controller
             }
             if($inmueble->precio != $request->precio){
                 $inmueble->precio = $request->precio;
+            }
+            if($inmueble->comentario != $request->comentario){
+                $inmueble->comentario = $request->comentario;
             }
             
             try{

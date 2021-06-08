@@ -91,7 +91,6 @@
                                     </div>
         
                                     <a class="button button-md button-pasific hover-icon-pulse-shrink mt25" href="{{ url( 'inmueble/' .  $inmueble->id ) }}">Ver más<i class="fa fa-eye"></i></a>
-                                    <a class="button button-md button-pasific hover-icon-forward mt25">Contactar<i class="fa fa-envelope"></i></a>
                                     @if($inmueble->iduser == Auth::user()->id || Auth::user()->rol == 'admin')
                                         <form method="post" action="{{ url( 'inmueble/' . $inmueble->id ) }}">
                                             @csrf

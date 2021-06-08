@@ -1,5 +1,12 @@
 @extends('layouts.adminapp')
-
+@section('script')
+<script src="https://cdn.tiny.cloud/1/gzpyrb46bhayxozbrs4be1me39ef9jh874msotgs2xzyojcr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea', // #idtextarea
+    });
+</script>
+@endsection
 @section('content')
 <div class="main-content" id="panel">
 
@@ -140,6 +147,14 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <input type="number" min="0.00" max="999999999.99" step="0.01" required class="form-control" id="precio" name="precio" placeholder="00,00" value="{{ $inmueble->precio }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario" class="col-sm-12 control-label">Comentario</label>
+                    @error('comentario')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <textarea name="comentario" id="comentario" placeholder="Describa aquí su inmueble">{{ $inmueble->comentario }}</textarea>
                 </div>
                     
                     

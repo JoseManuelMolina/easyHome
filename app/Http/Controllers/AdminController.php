@@ -10,6 +10,8 @@ use App\Models\Mensaje;
 use Illuminate\Support\Facades\DB;
 use Storage;
 use App\Http\Requests\UserEditRequest;
+use App\Http\Requests\InmuebleCreateRequest;
+use Intervention\Image\Facades\Image;
 
 class AdminController extends Controller
 {
@@ -112,6 +114,9 @@ class AdminController extends Controller
             }
             if($inmueble->precio != $request->precio){
                 $inmueble->precio = $request->precio;
+            }
+            if($inmueble->comentario != $request->comentario){
+                $inmueble->comentario = $request->comentario;
             }
             
             try{
@@ -257,8 +262,6 @@ class AdminController extends Controller
     //Storage::allfiles('public/images/' . $inmueble->iduser . '/' . $inmueble->id);        
 
     return $files = Storage::files('public/images/' . $inmueble->iduser . '/' . $inmueble->id);
-
-
     }
     
     private function uploadFiles(Request $request, string $name, Inmueble $inmueble){
